@@ -4,7 +4,9 @@
 
 <template>
   <h1 class="color">前端项目：开源十年</h1>
-  <span>kaiyuan10nian</span>
+  <p>kaiyuan10nian</p>
+  <p>globalCenter: {{ globalCenter.getSystemConfig('baseUrl') }}</p>
+  
 </template>
 
 <style scoped>

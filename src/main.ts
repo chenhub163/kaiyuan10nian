@@ -12,9 +12,11 @@ import "./assets/styles/global.scss"
    * 初始化系统基础配置信息
    *  1. 全局变量(global-center) | 工具库(tools) | 语言包（lpk） | Ajax 的定义
    *  2. 异步加载基础模块配置信息
+   *    a. 加载系统的当前状态信息
+   *    b. 加载当前登录用户的个人信息
    *  3. 异步加载业务模块， 完成基本初始化
    */
-  installGlobalCenter()
+  await installGlobalCenter()
 
   // 初始化ui
   const app = createApp(App)

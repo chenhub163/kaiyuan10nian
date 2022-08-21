@@ -7,6 +7,7 @@
 import globalCenter from './global-center'
 import tools from '@/utils/tools'
 import { useLpk, initLpk } from '@/config/lpk'
+import { initLoginUserInfo } from '@/controller/AppCtrl'
 
 // 声明全局变量相关的类型
 type IGlobalVarsKey = 'globalCenter' | 'tools' | 'useLpk' |  'ajax'
@@ -26,5 +27,9 @@ Object.keys(iGlobalVars).forEach(key => {
 })
 
 export async function installGlobalCenter() {
+  //@DESC: 初始化登录用户信息
+  await initLoginUserInfo()
+
+  //@DESC: 加载基础平台语言包
   initLpk()
 }

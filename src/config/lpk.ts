@@ -14,10 +14,10 @@ export function getEnvLocale(): string {
 
   // 2. 其次在从本地存储中读取语言环境
   lang = lang || tools.localStorage.getItem(STORE_LOCALE_NAME)
-
+  
   // 3. 最后在使用默认的语言包
   lang = lang || DEFAULT_LANGUAGE
-
+  
   return lang
 }
 
@@ -37,10 +37,9 @@ type ILpkFiles = {
 
 export function mergeLpk(lpkFiles: ILpkFiles) {
   const localeLanguage = getEnvLocale();
-
   Object.keys(lpkFiles).forEach(path => {
     if(path.indexOf(localeLanguage) == -1) return
-
+    
     const { default: lpkFileItem } = lpkFiles[path]
     
     for(let key in lpkFileItem) {
@@ -58,7 +57,7 @@ export const useLpk: IFnUseLpk = (key, options) => {
   if(isArray(value)) {
     if(!value.length) return options?.default || key
 
-    return value[options?.index || 0] || key
+    return value[options?.index || 0] || options?.default || key
   }
 
   return value || options?.default || key

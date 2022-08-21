@@ -28,7 +28,7 @@ const tools = {
     setItem(key: string, value: any) {
       cookies.set(key, JSON.stringify(value), { expires: 30 })
     },
-    getItem(key: string, defaultValue: any = '') {
+    getItem(key: string, defaultValue?: any) {
       const item = cookies.get(key) || defaultValue
 
       try {

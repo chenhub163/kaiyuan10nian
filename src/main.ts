@@ -17,13 +17,14 @@ import "./assets/styles/global.scss"
   installGlobalCenter()
 
   // 初始化ui
-  const app = createApp(App);
+  const app = createApp(App)
 
   // 注册全局组件
 
   // 向根组件绑定全局对象
-  app.config.globalProperties.globalCenter = window.globalCenter;
-  app.config.globalProperties.tools = window.tools;
+  app.config.globalProperties.globalCenter = window.globalCenter
+  app.config.globalProperties.tools = window.tools
+  app.config.globalProperties.useLpk = window.useLpk
 
   // 初始化 状态管理 和 路由， 并渲染根组件
   app.mount('#app')

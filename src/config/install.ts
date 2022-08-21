@@ -6,9 +6,10 @@
  */
 import globalCenter from './global-center'
 import tools from '@/utils/tools'
+import { useLpk, initLpk } from '@/config/lpk'
 
 // 声明全局变量相关的类型
-type IGlobalVarsKey = 'globalCenter' | 'tools' | 'lpk' |  'ajax'
+type IGlobalVarsKey = 'globalCenter' | 'tools' | 'useLpk' |  'ajax'
 type IGlobalVars = {
   [key in IGlobalVarsKey]?: any
 }
@@ -17,6 +18,7 @@ type IGlobalVars = {
 const iGlobalVars: IGlobalVars = {
   globalCenter,
   tools,
+  useLpk
 }
 
 Object.keys(iGlobalVars).forEach(key => {
@@ -24,5 +26,5 @@ Object.keys(iGlobalVars).forEach(key => {
 })
 
 export async function installGlobalCenter() {
-  
+  initLpk()
 }

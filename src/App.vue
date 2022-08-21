@@ -7,11 +7,11 @@ tools.cookie.setItem('user_phone', '1599886655')
 
 <template>
   <div class="container">
-    <h1 class="color">前端项目：开源十年</h1>
-    <p>kaiyuan10nian</p>
-    <p>globalCenter: {{ globalCenter.getSystemConfig('baseUrl') }}</p>
-    <p>user_name: {{ tools.localStorage.getItem('user_name') }}</p>
-    <p>user_phone: {{ tools.cookie.getItem('user_phone') }}</p>
+    <h1 class="color">{{ useLpk('Title') }}</h1>
+    <p>{{ useLpk('BlogAddress') }}: {{ globalCenter.getSystemConfig('baseUrl') }}</p>
+    <p>{{ useLpk('UserName') }}: {{ tools.localStorage.getItem('user_name') }}</p>
+    <p>{{ useLpk('UserPhone') }}: {{ tools.cookie.getItem('user_phone') }}</p>
+    <p>{{ useLpk('Mood') }}: 😪</p>
   </div>
 </template>
 

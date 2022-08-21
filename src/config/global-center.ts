@@ -1,3 +1,4 @@
+import AppCtrl from '@/controller/AppCtrl'
 import systemConfig, { ISystemConfig, IBmodItem } from './system-config'
 
 const globalCenter = {
@@ -14,6 +15,10 @@ const globalCenter = {
     }
 
     return false
+  },
+  // 获取app控制器
+  getAppCtrl() {
+    return AppCtrl
   }
 }
 

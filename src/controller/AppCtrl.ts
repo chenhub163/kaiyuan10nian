@@ -1,6 +1,6 @@
 import { LOGIN_TOKEN } from '@/utils/constants'
 import mdlUserApi, { ILoginUser } from '@/api/UserApi'
-import { changeLpk } from '@/config/lpk'
+import { mergeLpk,changeLpk } from '@/config/lpk'
 
 let loginUser: ILoginUser = {} as ILoginUser
 
@@ -14,6 +14,7 @@ export async function initLoginUserInfo() {
 
 export default {
   changeLpk,
+  mergeLpk,
   initLoginUserInfo,
   getLoginUser(): ILoginUser {
     return loginUser

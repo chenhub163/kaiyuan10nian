@@ -32,4 +32,13 @@ export async function installGlobalCenter() {
 
   //@DESC: 加载基础平台语言包
   initLpk()
+
+  //@DESC: 初始化业务模块
+  const bmodEntryAll: GlobalType.IRecord = import.meta.glob('@/bmod/*/entry.ts', { eager:true })
+  
+  for(const path in bmodEntryAll) {
+    const entryFile = bmodEntryAll[path]
+
+    entryFile && entryFile.entryInit && await entryFile.entryInit()
+  }
 }

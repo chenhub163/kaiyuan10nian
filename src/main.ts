@@ -1,13 +1,12 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import { installGlobalCenter } from '@/config/install'
+import { createApp } from "vue"
+import App from "./App.vue"
+import { installGlobalCenter, installGlobalComponent } from "@/config/install"
 
 import "normalize.css/normalize.css"
 import "./assets/fonts/iconfont.css"
 import "./assets/styles/global.scss"
 
-(async () => {
-
+;(async () => {
   /**
    * 初始化系统基础配置信息
    *  1. 全局变量(global-center) | 工具库(tools) | 语言包（lpk） | Ajax 的定义
@@ -22,6 +21,7 @@ import "./assets/styles/global.scss"
   const app = createApp(App)
 
   // 注册全局组件
+  installGlobalComponent(app)
 
   // 向根组件绑定全局对象
   app.config.globalProperties.globalCenter = window.globalCenter
@@ -29,5 +29,5 @@ import "./assets/styles/global.scss"
   app.config.globalProperties.useLpk = window.useLpk
 
   // 初始化 状态管理 和 路由， 并渲染根组件
-  app.mount('#app')
-})();
+  app.mount("#app")
+})()

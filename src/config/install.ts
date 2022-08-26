@@ -4,13 +4,14 @@
  *  2. 异步加载基础模块配置信息
  *  3. 异步加载业务模块， 完成基本初始化
  */
-import globalCenter from './global-center'
-import tools from '@/utils/tools'
-import { useLpk, initLpk } from '@/config/lpk'
-import { initLoginUserInfo } from '@/controller/AppCtrl'
+import globalCenter from "./global-center"
+import tools from "@/utils/tools"
+import { App } from "vue"
+import { useLpk, initLpk } from "@/config/lpk"
+import { initLoginUserInfo } from "@/controller/AppCtrl"
 
 // 声明全局变量相关的类型
-type IGlobalVarsKey = 'globalCenter' | 'tools' | 'useLpk' |  'ajax'
+type IGlobalVarsKey = "globalCenter" | "tools" | "useLpk" | "ajax"
 type IGlobalVars = {
   [key in IGlobalVarsKey]?: any
 }
@@ -19,11 +20,11 @@ type IGlobalVars = {
 const iGlobalVars: IGlobalVars = {
   globalCenter,
   tools,
-  useLpk
+  useLpk,
 }
 
 Object.keys(iGlobalVars).forEach(key => {
-  (window as any)[key as IGlobalVarsKey] = iGlobalVars[key as IGlobalVarsKey]
+  ;(window as any)[key as IGlobalVarsKey] = iGlobalVars[key as IGlobalVarsKey]
 })
 
 export async function installGlobalCenter() {
@@ -34,11 +35,26 @@ export async function installGlobalCenter() {
   initLpk()
 
   //@DESC: 初始化业务模块
-  const bmodEntryAll: GlobalType.IRecord = import.meta.glob('@/bmod/*/entry.ts', { eager:true })
-  
-  for(const path in bmodEntryAll) {
+  const bmodEntryAll: GlobalType.IRecord = import.meta.glob("@/bmod/*/entry.ts", { eager: true })
+
+  for (const path in bmodEntryAll) {
     const entryFile = bmodEntryAll[path]
 
-    entryFile && entryFile.entryInit && await entryFile.entryInit()
+    entryFile && entryFile.entryInit && (await entryFile.entryInit())
   }
+}
+
+// 初始化全局组件
+export function installGlobalComponent(uiApp: App<Element>) {
+  const globalComponentAll: GlobalType.IRecord = import.meta.glob("@/components/*/src/*.vue", {
+    eager: true,
+  })
+
+  Object.keys(globalComponentAll).forEach((path: string) => {
+    // path -> /src/components/Icon/src/Icon.vue
+    const pathArray: string[] = path.split("/")
+    const componentName: string = pathArray[pathArray.length - 3]
+
+    uiApp.component(componentName, globalComponentAll[path].default)
+  })
 }

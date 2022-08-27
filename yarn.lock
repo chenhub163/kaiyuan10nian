@@ -263,10 +263,22 @@ autoprefixer@^10.4.8:
     picocolors "^1.0.0"
     postcss-value-parser "^4.2.0"
 
+balanced-match@^1.0.0:
+  version "1.0.2"
+  resolved "https://repo.huaweicloud.com/repository/npm/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
+  integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
+
 binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "https://repo.huaweicloud.com/repository/npm/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
+
+brace-expansion@^2.0.1:
+  version "2.0.1"
+  resolved "https://repo.huaweicloud.com/repository/npm/brace-expansion/-/brace-expansion-2.0.1.tgz#1edc459e0f0c548486ecf9fc99f2221364b9a0ae"
+  integrity sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==
+  dependencies:
+    balanced-match "^1.0.0"
 
 braces@^3.0.2, braces@~3.0.2:
   version "3.0.2"
@@ -322,6 +334,13 @@ csstype@^2.6.8:
   version "2.6.20"
   resolved "https://repo.huaweicloud.com/repository/npm/csstype/-/csstype-2.6.20.tgz#9229c65ea0b260cf4d3d997cb06288e36a8d6dda"
   integrity sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==
+
+debug@^4.3.4:
+  version "4.3.4"
+  resolved "https://repo.huaweicloud.com/repository/npm/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
+  integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
+  dependencies:
+    ms "2.1.2"
 
 electron-to-chromium@^1.4.202:
   version "1.4.225"
@@ -655,6 +674,13 @@ micromatch@^4.0.4:
     braces "^3.0.2"
     picomatch "^2.3.1"
 
+minimatch@^5.1.0:
+  version "5.1.0"
+  resolved "https://repo.huaweicloud.com/repository/npm/minimatch/-/minimatch-5.1.0.tgz#1717b464f4971b144f6aabe8f2d0b8e4511e09c7"
+  integrity sha512-9TPBGGak4nHfGZsPBohm9AWg6NoT7QTCehS3BIJABslyZbzxfV78QM2Y6+i741OPZIafFAaiiEMh5OyIrJPgtg==
+  dependencies:
+    brace-expansion "^2.0.1"
+
 mlly@^0.5.13, mlly@^0.5.7:
   version "0.5.14"
   resolved "https://repo.huaweicloud.com/repository/npm/mlly/-/mlly-0.5.14.tgz#1aead555f8ffafd29f192676f4697805e25112c3"
@@ -664,6 +690,11 @@ mlly@^0.5.13, mlly@^0.5.7:
     pathe "^0.3.5"
     pkg-types "^0.3.4"
     ufo "^0.8.5"
+
+ms@2.1.2:
+  version "2.1.2"
+  resolved "https://repo.huaweicloud.com/repository/npm/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
+  integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
 nanoid@^3.3.4:
   version "3.3.4"
@@ -959,6 +990,22 @@ unplugin-auto-import@^0.11.2:
     magic-string "^0.26.2"
     unimport "^0.6.7"
     unplugin "^0.9.3"
+
+unplugin-vue-components@^0.22.4:
+  version "0.22.4"
+  resolved "https://repo.huaweicloud.com/repository/npm/unplugin-vue-components/-/unplugin-vue-components-0.22.4.tgz#774a96339368f3b8436fa7c20e059d9fee42c983"
+  integrity sha512-2rRZcM9OnJGXnYxQNfaceEYuPeVACcWySIjy8WBwIiN3onr980TmA3XE5pRJFt8zoQrUA+c46oyIq96noLqrEQ==
+  dependencies:
+    "@antfu/utils" "^0.5.2"
+    "@rollup/pluginutils" "^4.2.1"
+    chokidar "^3.5.3"
+    debug "^4.3.4"
+    fast-glob "^3.2.11"
+    local-pkg "^0.4.2"
+    magic-string "^0.26.2"
+    minimatch "^5.1.0"
+    resolve "^1.22.1"
+    unplugin "^0.9.0"
 
 unplugin@^0.9.0, unplugin@^0.9.3:
   version "0.9.5"

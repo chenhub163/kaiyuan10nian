@@ -3,6 +3,8 @@ import tools from "./utils/tools"
 
 tools.localStorage.setItem("user_name", "张三")
 tools.cookie.setItem("user_phone", "1599886655")
+
+const show: boolean = true
 </script>
 
 <template>
@@ -14,6 +16,9 @@ tools.cookie.setItem("user_phone", "1599886655")
     <p>{{ useLpk("Mood") }}: 😪</p>
 
     <Icon icon="icon-time"></Icon>
+    <van-button>按钮</van-button>
+
+    <van-calendar v-model:show="show" />
   </div>
 </template>
 

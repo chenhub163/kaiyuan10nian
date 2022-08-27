@@ -31,6 +31,11 @@ export async function installGlobalCenter() {
   //@DESC: 初始化登录用户信息
   await initLoginUserInfo()
 
+  //@DESC: 主题定制
+  // 1. 针对不同主题书写不同的样式文件, 系统初始化时, 根据当前使用的主题到 server 端加载对应的样式文件来使用
+  // 2. 通过 scss 变量与 scss 里面的函数和 mixin 来实现主题的定制
+  // 3. 通过 csss 变量来实现主题的定制
+
   //@DESC: 加载基础平台语言包
   initLpk()
 

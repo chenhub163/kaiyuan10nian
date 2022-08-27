@@ -18,11 +18,30 @@ const show: boolean = true
     <Icon icon="icon-time"></Icon>
     <van-button>按钮</van-button>
 
-    <van-calendar v-model:show="show" />
+    <!-- <van-calendar v-model:show="show" /> -->
+
+    <div class="theme">
+      <div class="theme-item" v-for="index in 3">{{ index }}</div>
+    </div>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.theme {
+  display: flex;
+  justify-content: space-between;
+
+  .theme-item {
+    margin: 10px 20px;
+    width: 30%;
+    padding: 30px 0;
+    text-align: center;
+    @include fontSize('big-size');
+    @include bg();
+    @include color()
+  }
+}
+
 .color {
   display: flex;
   color: red;

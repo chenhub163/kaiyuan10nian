@@ -6,6 +6,9 @@ import "normalize.css/normalize.css"
 import "./assets/fonts/iconfont.css"
 import "./assets/styles/global.scss"
 
+import "./assets/styles/theme/base.scss"
+import "./assets/styles/theme/black.scss"
+import "./assets/styles/theme/blue.scss"
 ;(async () => {
   /**
    * 初始化系统基础配置信息

@@ -9,6 +9,7 @@ import tools from "@/utils/tools"
 import { App } from "vue"
 import { useLpk, initLpk } from "@/config/lpk"
 import { initLoginUserInfo } from "@/controller/AppCtrl"
+import { initSystemTheme } from "./theme"
 
 // 声明全局变量相关的类型
 type IGlobalVarsKey = "globalCenter" | "tools" | "useLpk" | "ajax"
@@ -35,6 +36,7 @@ export async function installGlobalCenter() {
   // 1. 针对不同主题书写不同的样式文件, 系统初始化时, 根据当前使用的主题到 server 端加载对应的样式文件来使用
   // 2. 通过 scss 变量与 scss 里面的函数和 mixin 来实现主题的定制
   // 3. 通过 csss 变量来实现主题的定制
+  initSystemTheme()
 
   //@DESC: 加载基础平台语言包
   initLpk()

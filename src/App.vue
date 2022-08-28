@@ -36,9 +36,8 @@ const show: boolean = true
     width: 30%;
     padding: 30px 0;
     text-align: center;
-    @include fontSize('big-size');
-    @include bg();
-    @include color()
+    background-color: var(--primary-bg-color);
+    color: var(--primary-color);
   }
 }
 

@@ -1,0 +1,13 @@
+[data-theme="black"] {
+  /*https://ant-design.gitee.io/docs/spec/colors-cn上通过#3c62cd作为标准生成的颜色*/
+  /*基础色: #000000 由浅入深*/
+  --theme-color-1: #404040;
+  --theme-color-2: #333333;
+  --theme-color-3: #262626;
+  --theme-color-4: #1a1a1a;
+  --theme-color-5: #0d0d0d;
+  --theme-color-6: #000000;
+
+  --primary-bg-color: var(--theme-color-6);
+  --primary-color: var(--base-color);
+}

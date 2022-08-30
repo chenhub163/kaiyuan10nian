@@ -1,6 +1,7 @@
 import { createApp } from "vue"
 import App from "./App.vue"
 import { installGlobalCenter, installGlobalComponent } from "@/config/install"
+import { initRouter } from './router'
 
 import "normalize.css/normalize.css"
 import "./assets/fonts/iconfont.css"
@@ -31,6 +32,16 @@ import "./assets/styles/theme/blue.scss"
   app.config.globalProperties.tools = window.tools
   app.config.globalProperties.useLpk = window.useLpk
 
-  // 初始化 状态管理 和 路由， 并渲染根组件
+  /**
+   * 初始化路由
+   *  1. 初始化基础模块的路由配置
+   *  2. 初始化业务模块的路由配置
+   *  3. 对路由守卫处理
+   *  4. kepp-alive 的使用
+   */
+  app.use(initRouter())
+
+
+  // 渲染根组件
   app.mount("#app")
 })()

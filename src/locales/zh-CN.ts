@@ -1,7 +1,6 @@
 export default {
-  "Title": "前端项目：开源10年",
-  "BlogAddress": "博客地址",
-  "UserName": "用户名",
-  "UserPhone": "手机号",
-  "Mood": "心情"
+  "page.index.title": "首页",
+  "page.my.title": "我的",
+  "page.login.title": "登录",
+  "page.register.title": "注册"
 }

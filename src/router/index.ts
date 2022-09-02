@@ -1,7 +1,7 @@
 import { set, get } from "lodash"
 import { createRouter, createWebHistory, Router, RouteRecordRaw } from "vue-router"
 import Index from "@/views/index/Index.vue"
-import { ROUTE_VIEW_KEY } from "@/UTILS/constants"
+import { ROUTE_VIEW_KEY, LOGIN_PATH } from "@/UTILS/constants"
 
 // 对于 RouteRecordRaw 类型的扩展
 // 扩展的原因是因为: RouteRecordRaw 不允许我们通过 push 的方式添加路由
@@ -39,7 +39,7 @@ export function initRouter(): Router {
       ],
     },
     {
-      path: "/login",
+      path: LOGIN_PATH,
       name: "Login",
       component: () => import("@/views/login/Login.vue"),
       meta: { title: useLpk("page.login.title"), auth: false },
@@ -68,6 +68,27 @@ export function initRouter(): Router {
     routes,
     history: createWebHistory(),
   })
+
+  router.beforeEach((to, from, next) => {
+    const LoginUserID = get(globalCenter.getAppCtrl().getLoginUser(), "id", "")
+
+    if (!LoginUserID && to.matched.some(record => false !== get(record, "meta.auth", true))) {
+      next({
+        path: LOGIN_PATH,
+        query: { redirect: to.fullPath },
+      })
+
+      return
+    }
+
+    // 已登录, 进入登录界面的时候, 直接返回到主页
+    if(LoginUserID && to.path == LOGIN_PATH) {
+      next('/')
+      return
+    }
+
+    next()
+  }) 
 
   router.afterEach(to => {
     const title = get(to.meta, "title", "")

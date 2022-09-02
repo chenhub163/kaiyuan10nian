@@ -7,7 +7,11 @@
 </script>
 
 <template>
-  <div>home</div>
+  <div>
+    <h1>page name: Home</h1>
+    <label>Home name：</label>
+    <input type="text" />
+  </div>
 </template>
 
 <style scoped></style>

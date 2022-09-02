@@ -11,7 +11,7 @@ export interface ISystemConfig {
 const systemConfig: ISystemConfig = {
   baseUrl: 'htpp://192.168.1.102:8585',
   bmods: [
-    { name: 'blog', enable: true }
+    { name: 'blog', enable: false }
   ]
 }
 

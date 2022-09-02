@@ -9,14 +9,16 @@
 <template>
   <div class="container">
     <h1>首页</h1>
-    <router-view class="views"></router-view>
+
+    <router-view-keep-alive class="views"></router-view-keep-alive>
+
     <ul class="nav">
       <li>
         <router-link :to="{ name: 'Home' }">{{ useLpk("page.index.title") }}</router-link>
       </li>
-      <li>
+      <!-- <li>
         <router-link :to="{ name: 'BlogIndex' }">{{ useLpk("blog.index.title") }}</router-link>
-      </li>
+      </li> -->
       <li>
         <router-link :to="{ name: 'My' }">{{ useLpk("page.my.title") }}</router-link>
       </li>
@@ -39,7 +41,6 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-
   li {
     padding: 10px 15px;
     background-color: #85b1eba9;

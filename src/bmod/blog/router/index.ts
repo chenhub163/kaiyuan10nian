@@ -14,7 +14,7 @@ export function initRoutes() {
         title: useLpk("blog.index.title"),
         auth: false,
       },
-      component: () => import("../views/Index/Index.vue"),
+      component: () => import("../views/Index/BlogIndex.vue"),
     },
     {
       path: `${path}/article/detail/:id`,

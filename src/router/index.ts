@@ -33,6 +33,7 @@ export function initRouter(): Router {
           name: "My",
           meta: {
             title: useLpk("page.my.title"),
+            keepAlive: false,
           },
           component: () => import("@/views/My/My.vue"),
         },
@@ -71,7 +72,6 @@ export function initRouter(): Router {
 
   router.beforeEach((to, from, next) => {
     const LoginUserID = get(globalCenter.getAppCtrl().getLoginUser(), "id", "")
-
     if (!LoginUserID && to.matched.some(record => false !== get(record, "meta.auth", true))) {
       next({
         path: LOGIN_PATH,
@@ -82,13 +82,13 @@ export function initRouter(): Router {
     }
 
     // 已登录, 进入登录界面的时候, 直接返回到主页
-    if(LoginUserID && to.path == LOGIN_PATH) {
-      next('/')
+    if (LoginUserID && to.path == LOGIN_PATH) {
+      next("/")
       return
     }
 
     next()
-  }) 
+  })
 
   router.afterEach(to => {
     const title = get(to.meta, "title", "")

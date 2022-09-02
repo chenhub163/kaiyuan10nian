@@ -1,5 +1,6 @@
 import moduleConfig from './config/module-config'
 const ModuleName = moduleConfig.module
+import { initRoutes } from './router'
 
 export async  function entryInit() {
   // 检测该模块是否启用
@@ -13,6 +14,7 @@ export async  function entryInit() {
   // 初始化当前模块的状态管理信息
 
   // 初始化当前模块的路由信息
+  initRoutes()
 }
 
 export default {}

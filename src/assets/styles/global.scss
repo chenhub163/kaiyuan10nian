@@ -18,164 +18,262 @@ font-size: 100/3.75 * 480 / 100 = 128 值为最大能接受值, 因此超过该�
 */
 @media screen and (min-width: 480px) {
   html {
-      font-size: 128PX;
+    font-size: 128px;
   }
 }
 
-body{
-  font-size:14px;
+body {
+  font-size: 14px;
   padding-bottom: constant(safe-area-inset-bottom); /* 兼容 iOS < 11.2 */
   padding-bottom: env(safe-area-inset-bottom); /* 兼容 iOS >= 11.2 */
 }
 
-.hide{
+.hide {
   visibility: hidden;
   opacity: 0;
 }
 
-body, div, dl, dt, dd, ul, ol, li,  h4, h5, h6, pre, form, fieldset, p, b, blockquote, table, th, img, font, hr{margin:0;padding:0;}
-ul,ol,li{list-style: none;}
-img {border: none;vertical-align: middle; -ms-interpolation-mode: bicubic;}
-label{display:inline-block;}
-em{font-style: normal;}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+p,
+b,
+blockquote,
+table,
+th,
+img,
+font,
+hr {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  border: none;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+}
+label {
+  display: inline-block;
+}
+em {
+  font-style: normal;
+}
 
-input,button,select,textarea{outline:none;}
-input,textarea{background: none !important;}
-input::-ms-clear{display:none;}
-::-ms-clear { display: none; }
-::-ms-reveal { display: none; }
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+input,
+textarea {
+  background: none !important;
+}
+input::-ms-clear {
+  display: none;
+}
+::-ms-clear {
+  display: none;
+}
+::-ms-reveal {
+  display: none;
+}
 
-a{
+a {
   color: var(--link-color);
   outline: 0;
   text-decoration: none;
-  text-underline-position: under
+  text-underline-position: under;
 }
 
 :focus:not(:focus-visible) {
-  outline: 0
+  outline: 0;
 }
 
-input:focus,textarea:focus {
-  outline: 0
+input:focus,
+textarea:focus {
+  outline: 0;
 }
 
-.clearfix{display: block;}
-* html .clearfix{height: 1%;}
-.clearfix:after{content: ".";display: block;height: 0;clear: both;visibility: hidden;}
-.posr{position: relative;}
-.hide{display: none;}
-.txtjustify{text-align:justify;text-justify:distribute;}
-.txtellipsis{text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.clearfix {
+  display: block;
+}
+* html .clearfix {
+  height: 1%;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.posr {
+  position: relative;
+}
+.hide {
+  display: none;
+}
+.txtjustify {
+  text-align: justify;
+  text-justify: distribute;
+}
+.txtellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
 /*全局滚动条的设置*/
 ::-webkit-scrollbar {
-    height: 6px !important;
-    width: 6px !important;
-    transition: all 0.3s ease-in-out;
-    border-radius: 2px;
+  height: 6px !important;
+  width: 6px !important;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-button {
-    display: none;
+  display: none;
 }
 ::-webkit-scrollbar-thumb {
-    width: 4px;
-    min-height: 15px;
-    background: rgba(178,178,183, 0.6) !important;
-    transition: all 0.3s ease-in-out;
-    border-radius: 2px;
+  width: 4px;
+  min-height: 15px;
+  background: rgba(178, 178, 183, 0.6) !important;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.1) !important;
+  background: rgba(0, 0, 0, 0.1) !important;
 }
 
 /*带下划线的标题*/
-.g-underline-title{
+.g-underline-title {
   display: inline-block;
   margin: 10px 0;
 
-  .item{
+  .item {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .title{
+    .title {
       font-weight: bold;
       font-size: 16px;
     }
 
-    .underline{
+    .underline {
       position: relative;
       top: -5px;
       width: 40px;
       height: 4px;
-      background: linear-gradient(to right, #4789F5, #3278EA, .6);
+      background: linear-gradient(to right, #4789f5, #3278ea, 0.6);
     }
   }
 }
 
-
 /*flex: row, column布局布局*/
-.g-flex-rsc, .g-flex-rec, .g-flex-rce, .g-flex-rcc, .g-flex-rsbc, .g-flex-rsbe, 
-.g-flex-rsac, .g-flex-rsbs, .g-flex-rss,
-.g-flex-csc, .g-flex-ccc, .g-flex-csbc, .g-flex-csbs, .g-flex-csac, .g-flex-ccs{
+.g-flex-rsc,
+.g-flex-rec,
+.g-flex-rce,
+.g-flex-rcc,
+.g-flex-rsbc,
+.g-flex-rsbe,
+.g-flex-rsac,
+.g-flex-rsbs,
+.g-flex-rss,
+.g-flex-csc,
+.g-flex-ccc,
+.g-flex-csbc,
+.g-flex-csbs,
+.g-flex-csac,
+.g-flex-ccs {
   display: flex;
   align-items: center;
 }
 
-.g-flex-csc, .g-flex-ccc, .g-flex-csbc, .g-flex-csbs, .g-flex-csac, .g-flex-ccs{
+.g-flex-csc,
+.g-flex-ccc,
+.g-flex-csbc,
+.g-flex-csbs,
+.g-flex-csac,
+.g-flex-ccs {
   flex-direction: column;
 }
 
-.g-flex-rsc, .g-flex-rss, .g-flex-csc{
+.g-flex-rsc,
+.g-flex-rss,
+.g-flex-csc {
   justify-content: flex-start;
 }
 
-.g-flex-rec{
+.g-flex-rec {
   justify-content: flex-end;
 }
 
-.g-flex-rcc, .g-flex-rce, .g-flex-ccc, .g-flex-ccs{
+.g-flex-rcc,
+.g-flex-rce,
+.g-flex-ccc,
+.g-flex-ccs {
   justify-content: center;
 }
 
-.g-flex-rsbc, .g-flex-rsbs, .g-flex-rsbe,
-.g-flex-csbc, .g-flex-csbs{
+.g-flex-rsbc,
+.g-flex-rsbs,
+.g-flex-rsbe,
+.g-flex-csbc,
+.g-flex-csbs {
   justify-content: space-between;
 }
 
-.g-flex-rsac, .g-flex-csac{
+.g-flex-rsac,
+.g-flex-csac {
   justify-content: space-around;
 }
 
-.g-flex-rsbs, .g-flex-csbs, .g-flex-rss, .g-flex-ccs{
+.g-flex-rsbs,
+.g-flex-csbs,
+.g-flex-rss,
+.g-flex-ccs {
   align-items: flex-start;
 }
 
-.g-flex-rsbe, .g-flex-rce{
+.g-flex-rsbe,
+.g-flex-rce {
   align-items: flex-end;
 }
 
 /*Media Query*/
 @media screen and (min-width: 760px) {
-  .mq-right-bottom{
+  .mq-right-bottom {
     right: calc((100vw - 760px) / 2 + 100px) !important;
   }
 }
 /*Media Query*/
 
-
 /*动画相关*/
 // animation: shadow-pulse 1s infinite;
 // 由近及远, 水波风格消失
-@keyframes shadow-pulse
-{
-     0% {
-          box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.2);
-     }
-     100% {
-          box-shadow: 0 0 0 35px rgba(255, 255, 255, 0);
-     }
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 35px rgba(255, 255, 255, 0);
+  }
 }
 /*动画相关*/
-

@@ -9,10 +9,13 @@
 <template>
   <div class="container">
     <h1>首页</h1>
-    <router-view></router-view>
-    <ul>
+    <router-view class="views"></router-view>
+    <ul class="nav">
       <li>
         <router-link :to="{ name: 'Home' }">{{ useLpk("page.index.title") }}</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'BlogIndex' }">{{ useLpk("blog.index.title") }}</router-link>
       </li>
       <li>
         <router-link :to="{ name: 'My' }">{{ useLpk("page.my.title") }}</router-link>
@@ -21,4 +24,27 @@
   </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.container {
+  padding: 0 12px;
+}
+.views {
+  height: 250px;
+  border: 1px solid #ff6347;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 20px 12px;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  li {
+    padding: 10px 15px;
+    background-color: #85b1eba9;
+    border-radius: 4px;
+    color: #333;
+  }
+}
+</style>
